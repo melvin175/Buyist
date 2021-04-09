@@ -1,14 +1,14 @@
 
 import React from 'react'
 
-import Tshirt from './Img/tshirt.png'
+import Tshirt from '../Assets/tshirt.png'
 
 const Products = () => {
     return (
         <div className="w-1/2 m-2 my-3 flex flex-col rounded-lg overflow-hidden md:my-1  md:w-1/3 lg:my-2 lg:w-1/5 xl:my-2  xl:w-1/5 sm:shadow-lg sm:hover:shadow-2xl sm:transition-shadow tracking-wide bg-gray-100">
             <div className="relative w-full overflow-hidden">
                 <div>
-                    <span className='absolute bg-gray-200  text-xs font-bold rounded-md top-2 left-2 px-2 py-1 z-10'>-49%</span>
+                    <span className='absolute bg-blue-200  text-xs font-bold rounded-md top-2 left-2 px-2 py-1 z-10'>-49%</span>
                     <div
                         className='relative min-w-full h-[40vh] min-h-full '>
                         <img
@@ -30,7 +30,7 @@ const Products = () => {
                         </span>
                     </p>
                 </div>
-                <button className="bg-yellow-400 w-full h-12 font-bold tracking-widest">ADD TO CART</button>
+                <button className="bg-yellow-300 w-full h-12 font-bold tracking-widest hover:text-green-50 hover:bg-yellow-400 transition-colors focus:outline-none">ADD TO CART</button>
             </div>
         </div>
     )
