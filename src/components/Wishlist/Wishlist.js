@@ -21,13 +21,25 @@ const Wishlist = () => {
                     <img src={Tshirt} />
                 </div>
                 <div class="px-6 py-4 flex-wrap">
-                    <h2 class="mb-2 text-base sm:text-xl capitalize opacity-80 font-black">Male T-shirts</h2>
+                    <h2 class="mb-2 mt-3 text-base sm:text-xl capitalize opacity-80 font-black">Male T-shirts</h2>
                     <p class="mb-4 text-grey-dark text-sm">
                     corps d’ elite T-Shirt only for men
                     </p>
+                    <div>
+                    <p className='flex flex-col justify-items-center font-bold text-base sm:text-xl mb-2'>₹ 500
+                        <span className='font-normal opacity-60 text-xs sm:text-sm line-through ml-2'>
+                        ₹ 499
+                        </span>
+                    </p>
+                    </div>
+                    <div className="flex space-x-3">
                     <button class="py-3 px-6 bg-yellow-300 hover:bg-yellow-400 text-black hover:text-green-50 font-bold rounded-md mt-1 mb-2">
                      Add to cart
                     </button>
+                    <button class="py-3 px-6 bg-yellow-300 hover:bg-yellow-400 text-black hover:text-green-50 font-bold rounded-md mt-1 mb-2">
+                     Remove
+                    </button>
+                    </div>
                 </div>
 
             </div>
