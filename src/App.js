@@ -11,9 +11,9 @@ function App() {
     <div className="App font-sans">
      <Header />
      <div className='flex justify-center items-center'>
-     <ProductCard/> 
-     {/* <Wishlist /> */}
-     <Product />
+     {/* <ProductCard/>  */}
+     <Wishlist />
+     {/* <Product /> */}
      </div>
     </div>
   ); 

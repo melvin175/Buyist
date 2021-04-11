@@ -1,4 +1,4 @@
-// import Logo from './Img/buyist.png'
+import Logo from '../Assets/buyist.png'
 
 import Searchbar from '../Searchbar/Searchbar'
 
@@ -10,9 +10,9 @@ const header = () => {
     return (
         <div className="w-full mx-auto  bg-gray-50 flex-shrink-0 shadow h-14 flex p-9 text-3xl sm:w-full md-full">
            <div className="w-full flex items-center justify-between">
-                {/* <span href=""className="justify-center items-center flex">
+                <span href=""className="justify-center items-center flex">
                     <img src={Logo} alt="logo" style={{height:"12vh"}}/>
-                </span> */}
+                </span>
                 <div className='flex p-6 space-x-6 justify-center items-center '>
                     <div>
                     <button className='hidden sm:block text-lg p-2 w-full focus:text-yellow-500 focus:outline-none'>
