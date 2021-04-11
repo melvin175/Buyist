@@ -4,6 +4,7 @@ import Searchbar from '../Searchbar/Searchbar'
 
 import {FaRegHeart} from 'react-icons/fa'
 import {FiShoppingBag} from 'react-icons/fi'
+import { Link } from 'react-router';
 import React from 'react'
 
 const header = () => {
@@ -15,20 +16,26 @@ const header = () => {
                 </span>
                 <div className='flex p-6 space-x-6 justify-center items-center '>
                     <div>
+                    <a href="/product">
                     <button className='hidden sm:block text-lg p-2 w-full focus:text-yellow-500 focus:outline-none'>
                      SHOP
                     </button>
+                    </a>
                     </div>
                     <div className="sm:text-2xl ">
                     <Searchbar />
                     </div>
                     <div className="sm:text-2xl relative inline-block">
+                    <a href="/wishlist">
                     <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-yellow-500 rounded-full">1</span>
                     <FaRegHeart />
+                    </a>
                     </div>
                     <div className="sm:text-2xl relative inline-block">
+                    <a href="/cart">
                     <FiShoppingBag/>
                     <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-yellow-500 rounded-full">1</span>
+                    </a>
                     </div>
                 </div>
            </div>
