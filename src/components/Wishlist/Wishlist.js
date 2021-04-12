@@ -33,10 +33,10 @@ const Wishlist = () => {
                     </p>
                     </div>
                     <div className="flex space-x-3 ">
-                    <button class="py-2 px-3 inline-block bg-yellow-300 hover:bg-yellow-400 text-black hover:text-green-50 font-bold rounded-md mt-1 mb-2">
+                    <button class="py-2 px-3 inline-block bg-yellow-300 hover:bg-yellow-400 text-black hover:text-green-50 font-bold rounded-md mt-1 mb-2 focus:outline-none">
                      Add to cart
                     </button>
-                    <button class="py-2 px-3 bg-yellow-300 hover:bg-yellow-400 text-black hover:text-green-50 font-bold rounded-md mt-1 mb-2">
+                    <button class="py-2 px-3 bg-yellow-300 hover:bg-yellow-400 text-black hover:text-green-50 font-bold rounded-md mt-1 mb-2 focus:outline-none">
                      Remove
                     </button>
                     </div>

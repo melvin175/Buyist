@@ -1,10 +1,13 @@
+/* eslint-disable no-unused-vars */
 
 import React from 'react'
+import {useCart}  from "../Context/Cartcontext";
 
 import Tshirt from '../Assets/tshirt.png'
 
 
 const ProductCard = ({product}) => {
+    const {setItemsInCart} = useCart()
     return (
         <div className="m-2 my-3 flex flex-col rounded-lg overflow-hidden md:my-1 lg:my-2 xl:my-2  sm:shadow-lg sm:hover:shadow-2xl sm:transition-shadow tracking-wide bg-gray-100">
             <div className="relative w-full overflow-hidden">
@@ -31,7 +34,9 @@ const ProductCard = ({product}) => {
                         </span>
                     </p>
                 </div>
-                <button className="bg-yellow-300 w-full h-12 font-bold tracking-widest hover:text-green-50 hover:bg-yellow-400 transition-colors focus:outline-none">ADD TO CART</button>
+                <button className="bg-yellow-300 w-full h-12 font-bold tracking-widest hover:text-green-50 hover:bg-yellow-400 transition-colors focus:outline-none" 
+                onClick={() => setItemsInCart((product) => [...product, product])}
+                >ADD TO CART</button>
             </div>
         </div>
     )
