@@ -2,23 +2,25 @@
 import './App.css'
 
 import Header from './components/Header/Header'
-import Wishlist from './components/Wishlist/Wishlist'
+import Wishlist from './components/WishlistCard/Wishlist'
 import Product from "./components/Product/Product";
 
 import {
-  BrowserRouter as Router,
-  Route,
+  Route, Switch
 } from "react-router-dom";
 
 function App() {
   return (
+
     <div className="App font-sans">
      <Header />
      <div className='flex justify-center items-center'>
-     <Router>
+     
+     <Switch>
      <Route path="/wishlist" component={ Wishlist}  />
      <Route path="/product" component= { Product}  />
-     </Router>
+     </Switch>
+     
      </div>
     </div>
   ); 

@@ -1,20 +1,31 @@
-import { createContext, useState} from "react";
-import { useContext } from 'react'
-
-export const CartContext = createContext();
+import React, {useReducer, useContext, createContext} from 'react'
 
 
-export function CartProvider({children}) {
-    const[itemsInCart, setItemsInCart] = useState([]);
+const CartStateContext = createContext()
+const CartDispatchContext = createContext()
+
+const reducer = (state, action) => {
+    switch(action.type) {
+        case "ADD":
+            return[...state, action.item];
+        default: 
+          throw new Error(`Unknown action ${action.type}`)
+    }
+}
+
+
+
+export const CartProvider = ({children}) => {
+    const [state, dispatch] = useReducer(reducer, []);
+
     return(
-        <CartContext.Provider 
-        value={{itemsInCart, setItemsInCart}}
-        >
+        <CartDispatchContext.Provider value={dispatch}>
+        <CartStateContext.Provider value={state}>
             {children}
-        </CartContext.Provider>
-    );
+        </CartStateContext.Provider>
+        </CartDispatchContext.Provider>
+    )
 }
 
-export function useCart() {
-    return useContext(CartContext);
-}
+export const useCart = () => useContext(CartStateContext)
+export const useDispatchCart = () => useContext(CartDispatchContext)

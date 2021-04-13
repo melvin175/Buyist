@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import ProductCard from '../ProductCard/ProductCard'
 
+
 import ProductGrid from '../ProductGrid/ProductGrid'
 const Product = () => {
 
@@ -18,8 +19,8 @@ useEffect(() => {
             {
                 productArray === []
                     ? (<div>Fetching Products</div>)
-                    : productArray.map(( element ) => 
-                        <ProductCard product={ element }/>
+                    : productArray.map(( product ) => 
+                        <ProductCard key={product.id} product={ product }/>
                         )
                     
                 }

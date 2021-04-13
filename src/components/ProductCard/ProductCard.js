@@ -2,14 +2,21 @@
 
 import React from 'react'
 import {useCart}  from "../Context/Cartcontext";
+import {useDispatchCart} from '../Context/Cartcontext'
 
 import Tshirt from '../Assets/tshirt.png'
 
 
 const ProductCard = ({product}) => {
-    const {setItemsInCart} = useCart()
+    const dispatch = useDispatchCart();
+
+    const addtocart = (item) => {
+        console.log(item);
+        dispatch({ type: "ADD", item})
+    }
+
     return (
-        <div className="m-2 my-3 flex flex-col rounded-lg overflow-hidden md:my-1 lg:my-2 xl:my-2  sm:shadow-lg sm:hover:shadow-2xl sm:transition-shadow tracking-wide bg-gray-100">
+        <div className="my-1 flex flex-col rounded-lg overflow-hidden md:my-1 lg:my-2 xl:my-2  sm:shadow-lg sm:hover:shadow-2xl sm:transition-shadow tracking-wide bg-gray-100">
             <div className="relative w-full overflow-hidden">
                 <div>
                     <span className='absolute bg-blue-200  text-xs font-bold rounded-md top-2 left-2 px-2 py-1 z-10'>-49%</span>
@@ -35,7 +42,7 @@ const ProductCard = ({product}) => {
                     </p>
                 </div>
                 <button className="bg-yellow-300 w-full h-12 font-bold tracking-widest hover:text-green-50 hover:bg-yellow-400 transition-colors focus:outline-none" 
-                onClick={() => setItemsInCart((product) => [...product, product])}
+                onClick={() => addtocart((product))}
                 >ADD TO CART</button>
             </div>
         </div>
