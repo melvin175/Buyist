@@ -32,14 +32,14 @@ const Header = () => {
                     </div>
                     <div className="sm:text-2xl relative inline-block">
                     <Link to="/wishlist">
-                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-yellow-500 rounded-full">{items.length}</span>
+                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-yellow-500 rounded-full">1</span>
                     <FaRegHeart />
                     </Link>
                     </div>
                     <div className="sm:text-2xl relative inline-block">
                     <Link to="/cart">
                     <FiShoppingBag/>
-                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-yellow-500 rounded-full">1</span>
+                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-yellow-500 rounded-full">{items.length}</span>
                     </Link>
                     </div>
                 </div>
