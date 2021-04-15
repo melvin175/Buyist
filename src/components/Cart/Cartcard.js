@@ -1,19 +1,27 @@
 
-
 import Tshirt from '../Assets/tshirt.png'
-
+import {handleSaveForLater, handleDecreaseQuantity, handleIncreaseQuantity,handleRemoveFromCart} from '../reducers/cart.actions'
+import {useCart} from '../Context/Cartcontext'
 import React from 'react'
 
 
 
-const Cartcard = ({product,handleRemove}) => {
+const Cartcard = ({product}) => {
     
-    
+    const { quantity} = product
+    const {dispatchToCart} = useCart()
 
+    const handleDecreaseButtonClick = (product) => {
+        if (product.quantity === 1) {
+            dispatchToCart(handleRemoveFromCart(product))
+        } else {
+            dispatchToCart(handleDecreaseQuantity(product))
+        }
+    }
     return (
-        <div className="w-screen text-left mx-auto ">
-            <div className="m-2 leading-normal flex justify-center item-center">
-                <div class="w-1/2 text-left bg-gray-100 shadow-lg rounded overflow-hidden m-4 sm:flex">
+        <div className="flex">
+            <div className="m-2 leading-normal flex justify-center item-center ">
+                <div class="w-4/5 text-left bg-gray-100 shadow-lg rounded-lg overflow-hidden m-4 sm:flex sm:shadow-lg sm:hover:shadow-2xl sm:transition-shadow tracking-wide">
                     <div class="sm:h-auto sm:w-48 md:w-64 flex-none bg-cover bg-center rounded rounded-t sm:rounded sm:rounded-l text-center overflow-hidden">
                     <img src={Tshirt} alt="tshirt"/>
                 </div>
@@ -23,6 +31,12 @@ const Cartcard = ({product,handleRemove}) => {
                     {product?.description}
                     </p>
                     <div>
+                    <button onClick={() => handleDecreaseButtonClick(product)}> - </button>
+                    <button className='cursor-default'>{quantity}</button>
+                    <button 
+                    onClick={
+                        () => dispatchToCart(handleIncreaseQuantity(product))
+                        }> + </button>
                     <p className='flex flex-col justify-items-center font-bold text-base  mb-2'>₹ {product?.price}
                         <span className='font-normal opacity-60 text-xs  line-through ml-2'>
                         ₹ {product?.price}
@@ -30,11 +44,17 @@ const Cartcard = ({product,handleRemove}) => {
                     </p>
                     </div>
                     <div className="flex space-x-3 ">
-                    <button class="py-2 px-3 inline-block bg-yellow-300 hover:bg-yellow-400 text-black hover:text-green-50 font-bold rounded-md mt-1 mb-2 focus:outline-none">
-                     Add to wishlist
+                    <button class="py-2 px-3 inline-block bg-yellow-300 hover:bg-yellow-400 text-black hover:text-green-50 font-bold rounded-md mt-1 mb-2 focus:outline-none"
+                    onClick={
+                            () => {
+                                dispatchToCart(handleSaveForLater(product))
+                            }
+                        }
+                    >
+                     Add to wishlist 
                     </button>
                     <button class="py-2 px-3 bg-yellow-300 hover:bg-yellow-400 text-black hover:text-green-50 font-bold rounded-md mt-1 mb-2 focus:outline-none"
-                    onClick = {() => handleRemove(product)} >
+                    onClick = {() =>  dispatchToCart(handleRemoveFromCart(product))} >
                      Remove
                     </button>
                     </div>
@@ -42,7 +62,6 @@ const Cartcard = ({product,handleRemove}) => {
 
                 </div>
             </div>
-            
         </div>
     )
 }

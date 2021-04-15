@@ -1,27 +1,36 @@
-/* eslint-disable no-unused-vars */
 
 import React from 'react'
-import {useCart}  from "../Context/Cartcontext";
-import {useDispatchCart} from '../Context/Cartcontext'
+import { FaRegBookmark, FaBookmark } from "react-icons/fa";
+import {handleAddToCart, handleAddToWishlist, handleRemoveFromWishlist} from '../reducers/cart.actions'
+import {useCart} from '../Context/Cartcontext'
+import isPresentHelper from "../utils/isPresent"
 
 import Tshirt from '../Assets/tshirt.png'
 
 
 const ProductCard = ({product}) => {
-    const dispatch = useDispatchCart();
-
-    const addtocart = (item) => {
-        console.log(item);
-        dispatch({ type: "ADD", item})
-    }
+    
+    const {cartState, dispatchToCart} = useCart()
+    const isProductAddedToWishlist = isPresentHelper(cartState.wishlist, product)
 
     return (
         <div className="my-1 flex flex-col rounded-lg overflow-hidden md:my-1 lg:my-2 xl:my-2  sm:shadow-lg sm:hover:shadow-2xl sm:transition-shadow tracking-wide bg-gray-100">
             <div className="relative w-full overflow-hidden">
                 <div>
+                    <button className="text-3xl absolute top-0 right-3 z-10 focus:outline-none " 
+                    onClick={
+                    () => isProductAddedToWishlist
+                    ? dispatchToCart(handleRemoveFromWishlist(product))
+                    : dispatchToCart(handleAddToWishlist(product))}
+                    >
+                    {
+                        isProductAddedToWishlist ? <FaBookmark className="text-yellow-300" /> : <FaRegBookmark className="text-yellow-300"/>
+                    }
+                    </button>
                     <span className='absolute bg-blue-200  text-xs font-bold rounded-md top-2 left-2 px-2 py-1 z-10'>-49%</span>
+                    
                     <div
-                        className='relative  h-[40vh] min-h-full '>
+                        className='relative h-[40vh] min-h-full '>
                         <img
                             src={Tshirt}
                             alt='tshirt'
@@ -42,7 +51,7 @@ const ProductCard = ({product}) => {
                     </p>
                 </div>
                 <button className="bg-yellow-300 w-full h-12 font-bold tracking-widest hover:text-green-50 hover:bg-yellow-400 transition-colors focus:outline-none" 
-                onClick={() => addtocart((product))}
+                onClick={() => dispatchToCart(handleAddToCart(product))}
                 >ADD TO CART</button>
             </div>
         </div>

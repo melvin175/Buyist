@@ -7,7 +7,6 @@ const Searchbar = () => {
             <input 
             className=" p-2 overflow-visible border-1 h-3/4 border-gray-600 outline-none "
             type="text"
-            type='text'
             placeholder='Search'    
             />
             <div className="flex justify-between bg-white shadow-md">

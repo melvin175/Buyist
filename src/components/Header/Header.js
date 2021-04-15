@@ -1,8 +1,7 @@
 import Logo from '../Assets/buyist.png'
 
 import Searchbar from '../Searchbar/Searchbar'
-import {FaRegHeart} from 'react-icons/fa'
-import {FiShoppingBag} from 'react-icons/fi'
+import {FiShoppingBag, FiBookmark} from 'react-icons/fi'
 import { useCart } from '../Context/Cartcontext'
 import {Link } from 'react-router-dom'
 import React from 'react'
@@ -10,7 +9,7 @@ import React from 'react'
 
  
 const Header = () => {
-    const items = useCart();
+    const {cartState} = useCart();
     return (
         <div className="w-full mx-auto  bg-gray-50 flex-shrink-0 shadow h-14 flex p-9 text-3xl sm:w-full md-full">
            <div className="w-full flex items-center justify-between">
@@ -21,7 +20,7 @@ const Header = () => {
                 </span>
                 <div className='flex p-6 space-x-6 justify-center items-center '>
                     <div>
-                    <Link to="/product">
+                    <Link to="/shop">
                     <button className='hidden sm:block text-lg p-2 w-full focus:text-yellow-500 focus:outline-none'>
                      SHOP
                     </button>
@@ -32,14 +31,14 @@ const Header = () => {
                     </div>
                     <div className="sm:text-2xl relative inline-block">
                     <Link to="/wishlist">
-                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-yellow-500 rounded-full">1</span>
-                    <FaRegHeart />
+                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-yellow-500 rounded-full">{cartState.wishlist.length}</span>
+                    <FiBookmark />
                     </Link>
                     </div>
                     <div className="sm:text-2xl relative inline-block">
                     <Link to="/cart">
                     <FiShoppingBag/>
-                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-yellow-500 rounded-full">{items.length}</span>
+                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-yellow-500 rounded-full">{cartState.cart.length}</span>
                     </Link>
                     </div>
                 </div>

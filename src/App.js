@@ -4,6 +4,7 @@ import './App.css'
 import Header from './components/Header/Header'
 import Cart from './components/Cart/Cart'
 import Product from "./components/Product/Product";
+import Wishlist from './components/Wishlist/Wishlist'
 
 import {
   Route, Switch
@@ -17,8 +18,9 @@ function App() {
      <div className='flex justify-center items-center'>
      
      <Switch>
+     <Route path="/shop" component= { Product}  />
      <Route path="/cart" component={ Cart}  />
-     <Route path="/product" component= { Product}  />
+     <Route path="/wishlist" component= { Wishlist}  />
      </Switch>
      
      </div>
