@@ -50,7 +50,7 @@ const ProductCard = ({product}) => {
                         </span>
                     </p>
                 </div>
-                <button className="bg-yellow-300 w-full h-12 font-bold tracking-widest hover:text-green-50 hover:bg-yellow-400 transition-colors focus:outline-none" 
+                <button className=" w-full h-12 font-bold tracking-widest bg-gray-900 text-white hover:text-green-50 hover:bg-black transition-colors focus:outline-none" 
                 onClick={() => dispatchToCart(handleAddToCart(product))}
                 >ADD TO CART</button>
             </div>

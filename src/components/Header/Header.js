@@ -1,16 +1,20 @@
+import React from 'react'
+
+
 import Logo from '../Assets/buyist.png'
 
 import Searchbar from '../Searchbar/Searchbar'
 import {FiShoppingBag, FiBookmark} from 'react-icons/fi'
 import { useCart } from '../Context/Cartcontext'
 import {Link } from 'react-router-dom'
-import React from 'react'
+
 
 
  
 const Header = () => {
     const {cartState} = useCart();
     return (
+     <div className='flex flex-col'>
         <div className="w-full mx-auto  bg-gray-50 flex-shrink-0 shadow h-14 flex p-9 text-3xl sm:w-full md-full">
            <div className="w-full flex items-center justify-between">
                 <span href=""className="justify-center items-center flex">
@@ -44,6 +48,7 @@ const Header = () => {
                 </div>
            </div>
         </div>
+     </div>
     )
 }
 

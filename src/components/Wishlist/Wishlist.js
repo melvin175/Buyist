@@ -1,7 +1,9 @@
 import React from 'react'
-import {AiTwotoneHome} from 'react-icons/ai'
+import {FaHandHoldingHeart} from 'react-icons/fa'
+import Banner from '../Assets/wishlistbanner.png'
 import WishlistCard from './WishlistCard'
 import {useCart} from '../Context/Cartcontext'
+import { Link } from 'react-router-dom'
 
 const Wishlist = ({product}) => {
     const {dispatchToCart,cartState} = useCart();
@@ -11,25 +13,24 @@ const Wishlist = ({product}) => {
 
     if (cartState.wishlist.length === 0) {
         return (
-          <main>
-            <div className="w-screen flex flex-col justify-center item-center rounded-lg tracking-widest items-center bg-yellow-300  h-20 shadow-inner-xl">
-               <span className="tracking-widest items-center text-3xl font-Bold">MY WISHLIST</span>
-              <div className="p-1 mx-20 text-xs justify-center items-center relative inline-block">
-                  <span className="flex"> <AiTwotoneHome className="mx-1"/> <p>Home {'>>'} Wishlist </p></span>
-              </div>
-            </div>
-            <p>Wishlist is empty</p>
+          <main className="m-20 text-center">
+            <FaHandHoldingHeart className="mx-auto text-9xl text-gray-300"/>
+            <h1 className="text-6xl my-10 capitalize font-bold">Wishlist is empty</h1>
+            <p className="text-gray-500">You don't have any products in the wishlist yet.<br></br>
+            You will find a lot of interesting products on our "Shop" page.</p>
+            <Link to="/shop">
+             <button className="px-7 py-3 my-10 rounded-md bg-gray-900 text-white hover:text-green-50 hover:bg-black focus:outline-none">RETURN TO SHOP</button>
+            </Link>
           </main>
         )
     }
     return(
           <div>
-            <div className=" flex flex-col justify-center item-center rounded-lg tracking-widest items-center bg-yellow-300  h-20 shadow-inner-xl">
-               <span className="tracking-widest items-center text-3xl font-Bold">MY WISHLIST</span>
-              <div className="p-1 mx-20 text-xs justify-center items-center relative inline-block">
-                  <span className="flex"> <AiTwotoneHome className="mx-1"/> <p>Home {'>>'} Wishlist </p></span>
-              </div>
-            </div>
+            <div>
+            <img 
+            className="mx-auto"
+            src={Banner}  alt="banner"/>
+        </div>
             <div>
              {
                cartState.wishlist.map((item) => (
