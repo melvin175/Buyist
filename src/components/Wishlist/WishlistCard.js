@@ -20,11 +20,10 @@ const WishlistCard = ({product}) => {
                     {product?.description}
                     </p>
                     <div>
-                    <p className='flex flex-col justify-items-center font-bold text-base  mb-2'>₹ 500
-                        <span className='font-normal opacity-60 text-xs  line-through ml-2'>
+                    <p className='flex flex-col justify-items-center  font-bold text-2xl mb-2'>₹ {product?.price}</p>
+                        <span className='opacity-60 font-bold line-through ml-2'>
                         ₹ {product?.price}
                         </span>
-                    </p>
                     </div>
                     <div className="flex space-x-3 ">
                     <button class="py-2 px-3 inline-block bg-gray-900 text-white  hover:bg-black hover:text-green-50 font-bold rounded-md mt-1 mb-2 focus:outline-none"

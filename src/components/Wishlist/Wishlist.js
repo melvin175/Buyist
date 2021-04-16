@@ -15,7 +15,7 @@ const Wishlist = ({product}) => {
         return (
           <main className="m-20 text-center">
             <FaHandHoldingHeart className="mx-auto text-9xl text-gray-300"/>
-            <h1 className="text-6xl my-10 capitalize font-bold">Wishlist is empty</h1>
+            <h1 className="text-5xl my-10 capitalize font-bold">WISHLIST IS EMPTY</h1>
             <p className="text-gray-500">You don't have any products in the wishlist yet.<br></br>
             You will find a lot of interesting products on our "Shop" page.</p>
             <Link to="/shop">
