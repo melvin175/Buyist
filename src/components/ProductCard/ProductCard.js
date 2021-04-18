@@ -4,6 +4,7 @@ import { FaRegBookmark, FaBookmark } from "react-icons/fa";
 import {handleAddToCart, handleAddToWishlist, handleRemoveFromWishlist} from '../reducers/cart.actions'
 import {useCart} from '../Context/Cartcontext'
 import isPresentHelper from "../utils/isPresent"
+import { Link } from 'react-router-dom'
 
 import Tshirt from '../Assets/tshirt.png'
 
@@ -30,16 +31,20 @@ const ProductCard = ({product}) => {
                     <span className='absolute bg-blue-200  text-xs font-bold rounded-md top-2 left-2 px-2 py-1 z-10'>-49%</span>
                     
                     <div
-                        className='relative h-[40vh] min-h-full '>
+                        className='relative h-[40vh] min-h-full'>
+                        <Link to="/productdetails">
                         <img
                             src={Tshirt}
                             alt='tshirt'
                         />
+                        </Link>
                     </div>
                 </div>
                 <div className='relative px-1 py-2 w-full'>
+                <Link to="/productdetails">
                     <h1 className='font-bold text-base sm:text-xl capitalize opacity-80 truncate'>{product?.title}</h1>
                     <p className='my-1 text-xs sm:text-sm text-gray-500 truncate'>{product?.description}</p>
+                </Link>
                 </div>
             </div>
             <div className="description flex flex-col w-full">

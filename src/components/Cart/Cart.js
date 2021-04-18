@@ -78,7 +78,7 @@ const Cart = ({product}) => {
                         </div>
                         </div>
                         <div>
-                            <button className="px-2 py-1 mt-2 w-full rounded-md bg-gray-900 text-white hover:text-green-50 hover:bg-black">Place Order</button>
+                            <button className="px-2 py-1 mt-2 w-4/5 rounded-md bg-gray-900 text-white hover:text-green-50 hover:bg-black">Place Order</button>
                         </div>
                         <p className="mt-3 text-gray-500 text-xs capitalize">Total price incl GST*</p>
                     </div>

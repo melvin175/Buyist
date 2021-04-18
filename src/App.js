@@ -3,9 +3,9 @@ import './App.css'
 
 import Header from './components/Header/Header'
 import Cart from './components/Cart/Cart'
-import Product from "./components/Product/Product";
+import Product from './components/Product/Product'
 import Wishlist from './components/Wishlist/Wishlist'
-
+import ProductDetails from './pages/ProductDetails'
 import {
   Route, Switch
 } from "react-router-dom";
@@ -21,6 +21,7 @@ function App() {
      <Route path="/shop" component= { Product}  />
      <Route path="/cart" component={ Cart}  />
      <Route path="/wishlist" component= { Wishlist}  />
+     <Route path="/productdetails/:id" component= { ProductDetails}  />
      </Switch>
      
      </div>
