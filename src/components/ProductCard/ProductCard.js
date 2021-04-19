@@ -32,7 +32,7 @@ const ProductCard = ({product}) => {
                     
                     <div
                         className='relative h-[40vh] min-h-full'>
-                        <Link to="/productdetails">
+                        <Link to={`/productdetails/${product.id}`}>
                         <img
                             src={Tshirt}
                             alt='tshirt'
@@ -41,7 +41,7 @@ const ProductCard = ({product}) => {
                     </div>
                 </div>
                 <div className='relative px-1 py-2 w-full'>
-                <Link to="/productdetails">
+                <Link to={`/productdetails/${product.id}`}>
                     <h1 className='font-bold text-base sm:text-xl capitalize opacity-80 truncate'>{product?.title}</h1>
                     <p className='my-1 text-xs sm:text-sm text-gray-500 truncate'>{product?.description}</p>
                 </Link>
