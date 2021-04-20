@@ -18,7 +18,7 @@ const Header = () => {
         <div className="w-full mx-auto  bg-gray-50 flex-shrink-0 shadow-md h-14 flex p-9 text-3xl sm:w-full md-full">
            <div className="w-full flex items-center justify-between">
                 <span href=""className="justify-center items-center flex">
-                <Link to="/">
+                <Link to="">
                     <img src={Logo} alt="logo" style={{height:"12vh"}}/>
                 </Link>
                 </span>
