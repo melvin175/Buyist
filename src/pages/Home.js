@@ -2,7 +2,7 @@ import React from 'react'
 
 import { FcShipped } from 'react-icons/fc'
 import { RiShirtFill, RiErrorWarningFill } from 'react-icons/ri'
-
+import  Hero  from '../components/Hero/Hero'
 
 const Home = () => {
     return (
@@ -20,6 +20,7 @@ const Home = () => {
             <RiErrorWarningFill className="mx-4 text-lg text-black"/>   Norms related co-vid followed
             </div>
             </span>
+            <Hero />
         </div>
     )
 }
