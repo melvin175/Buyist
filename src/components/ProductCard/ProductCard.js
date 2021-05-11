@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { FaRegBookmark, FaBookmark } from "react-icons/fa";
-import {handleAddToCart, handleAddToWishlist, handleRemoveFromWishlist} from '../reducers/cart.actions'
+import {handleAddToCart, handleAddToWishlist, handleRemoveFromWishlist} from '../reducer/Cart/cart.actions'
 import {useCart} from '../Context/Cartcontext'
 import isPresentHelper from "../utils/isPresent"
 import { Link } from 'react-router-dom'
@@ -25,7 +25,7 @@ const ProductCard = ({product}) => {
                     : dispatchToCart(handleAddToWishlist(product))}
                     >
                     {
-                        isProductAddedToWishlist ? <FaBookmark className="text-yellow-300" /> : <FaRegBookmark className="text-yellow-300"/>
+                        isProductAddedToWishlist ? <FaBookmark className="text-yellow-300 " /> : <FaRegBookmark className="text-yellow-300"/>
                     }
                     </button>
                     <span className='absolute bg-blue-200  text-xs font-bold rounded-md top-2 left-2 px-2 py-1 z-10'>-49%</span>

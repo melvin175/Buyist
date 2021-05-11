@@ -4,7 +4,7 @@ import Tshirt from '../Assets/tshirt.png'
 import Header from '../Header/productheader'
 
 import {useCart} from '../Context/Cartcontext'
-import {handleAddToWishlist,handleAddToCart, handleRemoveFromWishlist } from '../reducers/cart.actions'
+import {handleAddToWishlist,handleAddToCart, handleRemoveFromWishlist } from '../reducer/Cart/cart.actions'
 
 
 import isPresentHelper from "../utils/isPresent"

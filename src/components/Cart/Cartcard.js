@@ -1,6 +1,6 @@
 
 import Tshirt from '../Assets/tshirt.png'
-import {handleSaveForLater, handleDecreaseQuantity, handleIncreaseQuantity,handleRemoveFromCart} from '../reducers/cart.actions'
+import {handleSaveForLater, handleDecreaseQuantity, handleIncreaseQuantity,handleRemoveFromCart} from '../reducer/Cart/cart.actions'
 import {useCart} from '../Context/Cartcontext'
 import React from 'react'
 

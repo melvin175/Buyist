@@ -1,5 +1,5 @@
 import React from 'react'
-import {handleMoveToCart, handleRemoveFromWishlist} from '../reducers/cart.actions'
+import {handleMoveToCart, handleRemoveFromWishlist} from '../reducer/Cart/cart.actions'
 import {useCart} from '../Context/Cartcontext'
 
 import Tshirt from '../Assets/tshirt.png'

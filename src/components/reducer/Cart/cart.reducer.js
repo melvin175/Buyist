@@ -1,6 +1,6 @@
-import isPresentHelper from '../utils/isPresent'
+import isPresentHelper from '../../utils/isPresent'
 
-import {ADD_TO_CART, REMOVE_FROM_CART, INCREASE_QUANTITY, DECREASE_QUANTITY, ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST, SAVE_FOR_LATER, MOVE_TO_CART} from './cart.types'
+import {ADD_TO_CART, REMOVE_FROM_CART, INCREASE_QUANTITY, DECREASE_QUANTITY, ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST, SAVE_FOR_LATER, MOVE_TO_CART} from '../Cart/cart.types'
 
 
 export const INITIAL_STATE = {
