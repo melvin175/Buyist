@@ -22,7 +22,7 @@ const Product = () => {
           <div>Fetching Products</div>
         ) : (
           productArray.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product._id} product={product} />
           ))
         )}
       </ProductGrid>

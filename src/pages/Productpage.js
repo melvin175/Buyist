@@ -12,8 +12,8 @@ const Productpage = () => {
     useEffect(() => {
         const fetch = async () => {
           await axios
-            .get("https://fakestoreapi.com/products/" + id)
-            .then((res) => {setProduct(res.data)
+            .get("https://buyist.herokuapp.com/api/product/" + id)
+            .then((res) => {setProduct(res.data.array)
             })
             .catch((err) => console.log(err))
         }

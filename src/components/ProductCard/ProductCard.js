@@ -44,7 +44,7 @@ const ProductCard = ({ product }) => {
           </div>
         </div>
         <div className="relative px-1 py-2 w-full">
-          <Link to={`/productdetails/${product.id}`}>
+          <Link to={`/productdetails/${product._id}`}>
             <h1 className="font-bold text-base sm:text-xl capitalize opacity-80 truncate">
               {product?.name}
             </h1>
