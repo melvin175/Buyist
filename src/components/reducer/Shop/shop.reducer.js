@@ -1,35 +1,40 @@
-// import {FILTER, SORT} from './shop.types'
+import {SORT_PRODUCT, SEARCH_PRODUCTS, FILTER } from '../Shop/shop.types'
 
+export const initialState = {
+  data: [],
+  error: false,
+  sort: null,
+  searchQuery: null,
+  filters: {
+    brandFilter: null,
+    outOfStock: false,
+    expressDelivery: false,
+  },
+}
 
-// export const INITIAL_STATE = {
-//     sortStatus: false,
-//     filterStatus: false,
-//     sort: null,
-//     filters: {
-//         menClothing: false,
-//         womenClothing: false,
-//         jewellery: false,
-//         electronics: false,
-//     },
-// }
-
-
-// export function shopReducer(state = INITIAL_STATE, action) {
-//     switch (action.type) {
-//         case SORT:
-//             return{
-//                 ...state,
-//                 sort: action.payload.sort,
-//                 sortStatus: false
-//             }
-
-//         case FILTER:
-//             return{
-//                 ...state,
-//                 filters: action.payload.filters,
-//                 filterStatus: false
-//             }
-//         default:
-//             return{...state}
-//     }
-// }
+export function shopReducer(state, action) {
+  switch (action.type) {
+    case SORT_PRODUCT:
+      return {
+        ...state,
+        sort: action.payload.sort,
+        data: [...state.data],
+      }
+    case SEARCH_PRODUCTS:
+      return {
+        ...state,
+        searchQuery: action.payload.query,
+        data: [...state.data],
+      }
+    case FILTER:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          [action.payload.filter]: !state.filters[action.payload.filter],
+        },
+      }
+    default:
+      return { ...state }
+  }
+}

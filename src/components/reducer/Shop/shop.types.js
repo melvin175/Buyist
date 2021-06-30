@@ -1,2 +1,6 @@
-// export const SORT = "SORT"
-// export const FILTER = "FILTER"
+
+   export const  SORT_PRODUCTS = 'SORT_PRODUCT'
+   export const SEARCH_PRODUCTS = 'SEARCH_PRODUCTS'
+   export const  FILTER = 'FILTER'
+ 
+  
