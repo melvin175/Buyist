@@ -21,8 +21,8 @@ const Product = () => {
         {productArray === [] ? (
           <div>Fetching Products</div>
         ) : (
-          productArray.map((product) => (
-            <ProductCard key={product._id} product={product} />
+          productArray.map((product, index) => (
+            <ProductCard key={index} product={product} />
           ))
         )}
       </ProductGrid>

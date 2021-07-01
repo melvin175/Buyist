@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
   const isProductAddedToWishlist = isPresentHelper(cartState.wishlist, product);
 
   return (
-    <div className="my-1 flex flex-col rounded-lg overflow-hidden md:my-1 lg:my-2 xl:my-2  sm:shadow-lg sm:hover:shadow-2xl sm:transition-shadow tracking-wide bg-gray-100">
+    <div className="my-1 flex flex-col rounded-lg  overflow-hidden md:my-1 lg:my-2 xl:my-2  sm:shadow-lg sm:hover:shadow-2xl sm:transition-shadow tracking-wide bg-gray-100">
       <div className="relative w-full overflow-hidden">
         <div>
           <button
@@ -39,7 +39,7 @@ const ProductCard = ({ product }) => {
 
           <div className="relative h-[40vh] min-h-full">
             <Link to={`/productdetails/${product._id}`}>
-              <img src={Tshirt} alt="tshirt" />
+              <img src={product?.image} alt="tshirt" />
             </Link>
           </div>
         </div>
