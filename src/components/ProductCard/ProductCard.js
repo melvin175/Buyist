@@ -9,8 +9,6 @@ import { useCart } from "../Context/Cartcontext";
 import isPresentHelper from "../utils/isPresent";
 import { Link } from "react-router-dom";
 
-import Tshirt from "../Assets/tshirt.png";
-
 const ProductCard = ({ product }) => {
   const { cartState, dispatchToCart } = useCart();
   const isProductAddedToWishlist = isPresentHelper(cartState.wishlist, product);
@@ -64,7 +62,7 @@ const ProductCard = ({ product }) => {
           </p>
         </div>
         <button
-          className=" w-full h-12 font-bold tracking-widest bg-gray-900 text-white hover:text-green-50 hover:bg-black transition-colors focus:outline-none"
+          className="rounded mt-2 w-full h-12 font-bold tracking-widest bg-gray-900 text-white hover:text-green-50 hover:bg-black transition-colors focus:outline-none"
           onClick={() => dispatchToCart(handleAddToCart(product))}
         >
           ADD TO CART

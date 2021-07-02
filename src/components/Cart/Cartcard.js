@@ -1,4 +1,3 @@
-import Tshirt from "../Assets/tshirt.png";
 import {
   handleSaveForLater,
   handleDecreaseQuantity,
@@ -23,7 +22,7 @@ const Cartcard = ({ product }) => {
     <div className="w-full ">
       <div class="w-full ml-0 text-left bg-gray-100 rounded-md overflow-hidden m-4 sm:flex sm:shadow-lg sm:hover:shadow-2xl sm:transition-shadow tracking-wide">
         <div class="sm:h-auto sm:w-48 md:w-64 flex-none bg-cover bg-center rounded rounded-t sm:rounded sm:rounded-l text-center overflow-hidden">
-          <img src={Tshirt} alt="tshirt" />
+          <img src={product?.image} alt="tshirt" />
         </div>
         <div class="mx-8 my-4">
           <h2 class="mb-2 mt-3 text-base sm:text-xl capitalize opacity-80 font-black ">

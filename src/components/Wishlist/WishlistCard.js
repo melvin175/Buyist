@@ -5,8 +5,6 @@ import {
 } from "../reducer/Cart/cart.actions";
 import { useCart } from "../Context/Cartcontext";
 
-import Tshirt from "../Assets/tshirt.png";
-
 const WishlistCard = ({ product }) => {
   const { dispatchToCart } = useCart();
 
@@ -15,7 +13,7 @@ const WishlistCard = ({ product }) => {
       <div className="m-2 leading-normal flex justify-center item-center ">
         <div class="w-2/3 text-left bg-gray-100 shadow-lg rounded-lg overflow-hidden m-4 sm:flex sm:shadow-lg sm:hover:shadow-2xl sm:transition-shadow tracking-wide">
           <div class="sm:h-auto sm:w-48 md:w-64 flex-none bg-cover bg-center rounded rounded-t sm:rounded sm:rounded-l text-center overflow-hidden">
-            <img src={Tshirt} alt="tshirt" />
+            <img src={product?.image} alt="tshirt" />
           </div>
           <div class="mx-8">
             <h2 class="mb-2 mt-3 text-base sm:text-xl capitalize opacity-80 font-black ">

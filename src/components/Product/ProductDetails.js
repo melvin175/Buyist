@@ -1,6 +1,5 @@
 import React from "react";
 
-import Tshirt from "../Assets/tshirt.png";
 import Header from "../Header/productheader";
 
 import { useCart } from "../Context/Cartcontext";
@@ -21,7 +20,7 @@ const Productdetails = ({ product }) => {
       <Header />
       <div className="flex items-center justify-between bg-gray-100 sm:justify-center w-full h-full sm:h-[80vh]">
         <div className="item-start justify-start sm:w-[50%] sm:h-[50%] my-28 w-2/6">
-          <img src={Tshirt} alt="product" />
+          <img src={product?.image} alt="product" />
         </div>
         <div className="h-4/5 w-2/4 ml-16 text-left p-10 justify-between ">
           <h1 className="font-bold text-xl sm:text-xl mb-8">{product?.name}</h1>
