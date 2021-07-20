@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
             }
           >
             {isProductAddedToWishlist ? (
-              <FaBookmark className="text-yellow-300 " />
+              <FaBookmark className="text-yellow-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
             ) : (
               <FaRegBookmark className="text-yellow-300" />
             )}
@@ -62,7 +62,7 @@ const ProductCard = ({ product }) => {
           </p>
         </div>
         <button
-          className="rounded mt-2 w-full h-12 font-bold tracking-widest bg-gray-900 text-white hover:text-green-50 hover:bg-black transition-colors focus:outline-none"
+          className="rounded mt-2 w-full h-12 font-bold tracking-widest bg-gray-900 text-white hover:text-green-50 hover:bg-black focus:outline-none transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
           onClick={() => dispatchToCart(handleAddToCart(product))}
         >
           ADD TO CART
